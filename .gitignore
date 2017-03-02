@@ -6,6 +6,7 @@ link-checker-results.txt
 src/app/**/*.js
 src/app/*.js
 *.js.map
+src/main.js
 e2e/**/*.js
 e2e/**/*.js.map
 _test-output
