@@ -1,0 +1,23 @@
+<h2>My Animals</h2>
+<div>
+  <label>Animal name:</label> <input #animalName />
+  <button (click)="add(animalName.value); animalName.value=''">
+      Add
+   </button>
+</div>
+<ul class="animals">
+  <li *ngFor="let animal of animals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)">
+    <span class="badge">{{animal.name.full}}</span>
+    <span>{{animal.species}}</span>
+    <span>{{animal.breed}}</span>
+    <span>{{animal.colour}}</span>
+    <span>{{animal.id}}</span>
+    <button class="delete" (click)="delete(animal); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedAnimal">
+  <h2>
+      {{selectedAnimal.name.full | uppercase}} is my animal
+   </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
