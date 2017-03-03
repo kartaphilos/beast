@@ -19,13 +19,6 @@ export class AnimalService {
 		.catch(this.handleError);
 	}
 
-	getAnimalsSlowly(): Promise<Animal[]> {
-	  return new Promise(resolve => {
-		// Simulate server latency with 2 second delay
-		setTimeout(() => resolve(this.getAnimals()), 2000);
-	    });
-	}
-
 	getAnimal(id: number): Promise<Animal> {
 		const url = `${this.animalsUrl}/${id}`;
 		return this.http.get(url)
