@@ -1,25 +1,36 @@
 <div>
-<md-list dense class="animals">
-  <md-list-item *ngFor="let animal of animals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)">
-    <md-icon>create</md-icon>
-    <h3 md-line> {{animal.name.full}} </h3>
-    <p md-line>
-      <span> {{animal.species}} </span>
-      <span> {{animal.breed}} </span>
-      <span> {{animal.id}} </span>
-    </p>
-    <p md-line>{{animal.colour}} </p>
-    <button (click)="delete(animal); $event.stopPropagation()"><md-icon>delete</md-icon></button>
-  </md-list-item>
-  <span class="add">
+  <md-list dense class="animals">
+    <md-list-item *ngFor="let animal of animals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)">
+      <md-icon md-list-avatar>pets</md-icon>
+      <h3 md-line> {{animal.name.full}} </h3>
+      <p md-line>Type: {{animal.species}} Breed: {{animal.breed}} ID: {{animal.id}}</p>
+      <p md-line>Colour: {{animal.colour}} </p>
+      <button (click)="delete(animal); $event.stopPropagation()"><md-icon>delete</md-icon></button>
+    </md-list-item>
+    <span class="add">
     <button md-mini-fab>
       <md-icon>add circle</md-icon>
     </button>
   </span>
-</md-list>
-
+  </md-list>
 </div>
 
+<md-grid-list cols="2" rowHeight="100px">
+  <md-grid-tile *ngFor="let animal of animals">
+    <md-card class="animal-card">
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>{{animal.name.display}}</md-card-title>
+        <md-card-subtitle>{{animal.breed}}</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <p>
+          Data on Animal
+        </p>
+      </md-card-content>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
 <!--
 <ul class="animals">
   <li *ngFor="let animal of animals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)">

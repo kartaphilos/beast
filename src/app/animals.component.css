@@ -8,6 +8,10 @@
    padding: 0;
    /*width: 15em;*/
 }
+.animal-card {
+  width: 400px;
+  height: fill;
+}
 .animals li {
    cursor: pointer;
    position: relative;
