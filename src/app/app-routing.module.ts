@@ -6,7 +6,7 @@ import { AnimalsComponent }	from './animals.component';
 //import { AnimalDetailComponent }	from './animal-detail.component';
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/animals', pathMatch: 'full' },
+//	{ path: '', redirectTo: '/animals', pathMatch: 'full' },
 //	{ path: 'detail/:id', component: AnimalDetailComponent },
 	{ path: 'animals', component: AnimalsComponent }
 ];
