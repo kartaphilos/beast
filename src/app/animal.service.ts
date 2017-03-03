@@ -8,7 +8,7 @@ import { Animal } from './animal';
 @Injectable()
 export class AnimalService {
 	private headers = new Headers({'Content-Type': 'application/json'});
-	private animalsUrl = 'api/animals';
+	private animalsUrl = 'api/animal';
 	// private animalsURl = 'http://localhost:8081/animals'
 	// ToDo - Put this into a config file for switching to InMemory vs real API
 	// ToDo (later later) - Boot up tests to check API ok

@@ -2,7 +2,8 @@ import { InMemoryDbService }	from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {  //ToDo - Can I return multiple doc types?  or do I need an InMem service for each doc type?
-    let animals = [  //ToDo - read json from a file
+    let animal = [  // <- This variable is the url -> /api/animal
+      //ToDo - read json from a file
       {
         "name": {
           "full": "Woofy woof woof",
@@ -68,6 +69,6 @@ export class InMemoryDataService implements InMemoryDbService {
         "gender": "gelding"
       }
     ];
-    return { animals };
+    return { animal };
   }
 }
