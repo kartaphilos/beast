@@ -8,21 +8,48 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var AppModule = (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
-}());
+const material_1 = require('@angular/material');
+const core_1 = require('@angular/core');
+const platform_browser_1 = require('@angular/platform-browser');
+const forms_1 = require('@angular/forms');
+const http_1 = require('@angular/http');
+// Imports for loading & configuring the in-memory web api
+const angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+const in_memory_data_service_1 = require('./in-memory-data.service');
+const app_routing_module_1 = require('./app-routing.module');
+const beast_app_component_1 = require('./beast-app.component');
+const shared_module_1 = require('./shared/shared.module');
+const animal_module_1 = require('./animal/animal.module');
+const animal_service_1 = require('./animal/animal.service');
+//import {APP_BASE_HREF} from '@angular/common';
+let AppModule = class AppModule {
+};
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            material_1.MaterialModule.forRoot(),
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+            shared_module_1.SharedModule,
+            animal_module_1.AnimalModule,
+            app_routing_module_1.AppRoutingModule
+        ],
+        declarations: [
+            beast_app_component_1.BeastApp,
+        ],
+        /* For dialogs
+          entryComponents: [
+            AnimalDetailComponent
+          ],
+          */
+        providers: [
+            animal_service_1.AnimalService
+        ],
+        bootstrap: [beast_app_component_1.BeastApp]
+    }), 
+    __metadata('design:paramtypes', [])
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map
