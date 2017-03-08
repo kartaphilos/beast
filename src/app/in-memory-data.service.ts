@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService {
           "display": "turd"
         },
         "birth": {},
-        "_id": "0af393fe-9084-4a50-9b9a-d45b82ccb9e0",
+        "id": "0af393fe-9084-4a50-9b9a-d45b82ccb9e0",
         "breed": "mutt",
         "colour": "black",
         "activity": "eating",

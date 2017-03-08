@@ -1,0 +1,15 @@
+<md-toolbar color="primary">
+  <span><md-icon>account circle</md-icon></span>
+
+  <span>Beast Treatment!</span>
+
+  <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+</md-toolbar>
+
+<md-menu x-position="before" #menu="mdMenu">
+  <button md-menu-item>Settings</button>
+  <button md-menu-item>Blah</button>
+  <button md-menu-item>About</button>
+</md-menu>
